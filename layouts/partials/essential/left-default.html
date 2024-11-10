@@ -1,0 +1,54 @@
+<div class="w-full">
+    <!--  Basic Information -->
+    <div class="my-12">
+        <div class="font-serif text-2xl"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
+        <div class="font-serif text-xl"><a>{{ .Site.Param "author" }}</a></div>
+        <div class="font-serif text-md">{{ .Site.Param "motto" }}</div>
+    </div>
+
+    <!--      Recent Posts -->
+    <!--    <div>-->
+    <!--        <p class="font-serif font-bold text-xl">最新文章/Recent Posts</p>-->
+    <!--        <ul class="list-disc list-inside">-->
+    <!--            {{ range first 5 .Site.RegularPages }}-->
+    <!--            <li class="font-serif text-md hover:text-blue-400"><a href="{{ .Permalink }}">{{ .Title }}</a></li>-->
+    <!--            {{ end }}-->
+    <!--        </ul>-->
+    <!--    </div>-->
+
+    <!--  Categories  -->
+    <div class="mb-8">
+        <p class="font-serif font-bold text-lg">分类/Categories</p>
+        <ul class="flex flex-wrap justify-end space-x-4">
+            {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+            <li class="font-serif hover:text-blue-400">
+                <a href="{{ $taxonomy.Page.RelPermalink }}">{{ $name }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+
+    <!--  Tags  -->
+    <div class="my-8">
+        <p class="font-serif font-bold text-lg">标签/Tags</p>
+        <ul class="flex flex-wrap justify-end space-x-4">
+            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+            <li class="font-serif hover:text-blue-400">
+                <a href="{{ $taxonomy.Page.RelPermalink }}">{{ $name }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+
+    <!--  Series  -->
+    <div>
+        <p class="font-serif font-bold text-lg">系列文章/Series</p>
+        <ul class="flex flex-wrap justify-end space-x-4">
+            {{ range $name, $taxonomy := .Site.Taxonomies.series }}
+            <li class="font-serif hover:text-blue-400">
+                <a href="{{ $taxonomy.Page.RelPermalink }}">{{ $name }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>

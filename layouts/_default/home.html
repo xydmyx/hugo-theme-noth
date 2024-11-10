@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+<!--  left side  -->
+<aside class="fixed w-72 h-full hidden lg:block text-right p-4 border-r-2">
+  {{ partial "essential/left-default.html" . }}
+</aside>
+
+<!--  content  -->
+<main class="flex-grow p-4 lg:ml-80">
+  <div class="w-full lg:w-3/4 pr-4">
+    <div class="font-serif mb-2 p-2">
+      {{ .Content }}
+    </div>
+    {{ range .Paginator.Pages }}
+    <div class="border p-4 bg-background-100 rounded-lg shadow-lg mb-4">
+      <h3><a href="{{ .Permalink }}" class="font-title hover:text-blue-400">{{ .Title }}</a></h3>
+      <div class="font-main">
+        {{ .Summary }}
+        {{ if .Truncated }}
+        <a href="{{ .RelPermalink }}">Read more...</a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+    {{ partial "components/pagination.html" . }}
+  </div>
+</main>
+
+{{ end }}

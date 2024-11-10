@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 目录容器样式 */
+#TableOfContents {
+    @apply bg-background-200 p-2 rounded-lg shadow-md;
+}
+
+/* 子级目录的样式 */
+#TableOfContents li ul {
+    @apply list-disc list-inside pl-4 space-y-1;
+}
+
+/* 链接样式 */
+#TableOfContents a {
+    @apply font-main text-sm hover:text-blue-500;
+}
+
+:target {
+    padding-top: 8rem; /* 跟导航栏的高度相同 */
+    margin-top: -8rem; /* 向上调整元素位置 */
+}

@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+<!--  left side  -->
+<aside class="fixed w-72 h-full hidden lg:block text-right p-4 border-r-2">
+    {{ partial "essential/left-default.html" . }}
+</aside>
+
+<!--  content  -->
+<main class="flex-grow p-4 lg:ml-80 lg:mr-40 w-1/2">
+    <h1 class="font-serif text-2xl text-center mt-12">{{ .Title }}</h1>
+    <ul class="flex flex-wrap justify-center space-x-4 mt-8">
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        <li class="font-serif text-lg hover:text-blue-400">
+            <a href="{{ $taxonomy.Page.RelPermalink }}">{{ $name }}</a>
+        </li>
+        {{ end }}
+    </ul>
+</main>
+
+{{ end }}

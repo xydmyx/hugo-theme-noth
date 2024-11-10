@@ -1,0 +1,19 @@
+name = 'noth'
+license = 'MIT'
+licenselink = 'https://github.com/xydmyx/hugo-theme-noth/LICENSE'
+description = 'Theme for hugo.'
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/xydmyx/hugo-theme-noth'
+
+# If you have a running demo of the theme
+demosite = 'https://xydmyx.github.io/'
+
+# Taxonomy terms
+tags = ['blog']
+features = ['tailwind']
+
+# If the theme has a single author
+[author]
+name = 'xydmyx'
+homepage = 'https://causalityn.site/about'

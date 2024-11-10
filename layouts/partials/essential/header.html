@@ -1,0 +1,11 @@
+<div class="flex items-center font-serif">
+    <div class="mr-auto"><a href="{{ .Site.BaseURL }}" class="m-2 p-2">{{ .Site.Title }}</a></div>
+<!--    <div class="mr-2"><span>按 S 搜索</span></div>-->
+    <nav class="">
+        <ul class="flex">
+            {{ range .Site.Menus.main }}
+            <li><a href="{{ .URL }}" class="m-2 p-2"> {{ .Name }}</a></li>
+            {{ end }}
+        </ul>
+    </nav>
+</div>

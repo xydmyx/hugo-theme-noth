@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "essential/head.html" . }}
+</head>
+<body class="flex flex-col h-screen bg-background-100">
+  <header class="fixed top-0 left-0 w-full bg-background-200 backdrop-blur border-b p-2">
+    {{ partial "essential/header.html" . }}
+  </header>
+  <div class="flex-grow mt-12 flex">
+    {{ block "main" . }}{{ end }}
+  </div>
+  <footer class="flex flex-col justify-center items-center my-4">
+    {{ partial "essential/footer.html" . }}
+  </footer>
+{{ partial "essential/scripts.html" . }}
+</body>
+</html>

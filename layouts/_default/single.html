@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+<!--  left side  -->
+<aside class="fixed w-72 h-full hidden lg:block text-right p-4 border-r-2">
+  {{ partial "essential/left-default.html" . }}
+</aside>
+
+<!--  main content  -->
+<main class="flex-grow lg:ml-80 p-4 flex">
+  <div class="w-full lg:w-3/4 h-full overflow-y-auto pr-4">
+    <h1 class="font-serif font-bold text-4xl text-center">{{ .Title }}</h1>
+    <div class="font-serif text-center">
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format ":date_long" }}
+      <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    </div>
+    <div class="prose max-w-none font-main p-4">
+      {{ .Content }}
+    </div>
+  </div>
+  <div class="fixed top-28 right-0 pl-24 w-1/4 hidden lg:block mx-8">
+    {{ .TableOfContents }}
+  </div>
+</main>
+{{ end }}
